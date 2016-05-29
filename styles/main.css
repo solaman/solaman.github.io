@@ -1,0 +1,26 @@
+
+body {
+    font-family: 'forum';
+    margin: 0;
+    border: none;
+    width: 100%;
+}
+
+h1 {
+ margin: 0;
+ padding: 0;
+}
+
+header {
+ background-color: #29293d;
+}
+
+header h1.page-title{
+    color: white;
+
+    height: 60px;
+    padding-left: 20px;
+
+    line-height: 80px;
+    font-size: 70px;
+}
