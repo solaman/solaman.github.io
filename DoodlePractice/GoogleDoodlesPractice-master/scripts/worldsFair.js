@@ -16,6 +16,7 @@
         doodleRatioWidth = ( (bigDoodleElement.naturalWidth || bigDoodleElement.clientWidth)/document.getElementById("base-doodle").clientWidth);
         doodleRatioHeight = ( (bigDoodleElement.naturalHeight || bigDoodleElement.clientHeight)/document.getElementById("base-doodle").clientHeight);
     });
+
    function moveLookingGlass(event) {
        var x = event.clientX;
        var y = event.clientY;

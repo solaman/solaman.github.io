@@ -31,7 +31,7 @@ var doodleContainerElement = document.getElementById("doodle-container");
             return;
         }
         resetDoodlePosition();
-        var distanceToStart = (swappingDoodle.width + swappingDoodle.clientWidth)/2;
+        var distanceToStart = (doodleContainerElement.clientWidth + swappingDoodle.clientWidth)/2;
         var numberOfFrames = 60;
         var horizontalPositionFrameDelta = distanceToStart/numberOfFrames;
         var horizontalPositionProperty = null;
@@ -65,7 +65,7 @@ var doodleContainerElement = document.getElementById("doodle-container");
 
     var doodleExit = function(pageDelta){
         resetDoodlePosition();
-        var distanceToCover = (swappingDoodle.width + doodleContainerElement.clientWidth)/2;
+        var distanceToCover = (swappingDoodle.clientWidth + doodleContainerElement.clientWidth)/2;
         var numberOfFrames = 60;
         var horizontalPositionFrameDelta = distanceToCover/numberOfFrames;
         var horizontalPositionProperty = null;
@@ -89,6 +89,23 @@ var doodleContainerElement = document.getElementById("doodle-container");
         }
     };
 
+/*
+This whole code is super sketch. For this reason in particular:
+the IFrame from the start does not have a src attribute. So,
+I have to add the URL *before* inserting into the DOM, otherwise
+two load events will be caught.
+
+This doesn't happen for the img element, because it *already*
+has a src attribute assigned and we start with it. So the everything
+has already been loaded!
+You can guess that, if we made it so that we started with an IFrame
+and moved to an img, that we would get two load events for img unless
+we add the src first.
+
+The fact that this is a problem and the code does not lead itself to an elegant
+solution to resolve this issue makes me think that it should be reorganized in
+the first place.
+ */
     var swapDoodles = function(pageDelta) {
         if(doodleNames[currentDoodleIndex] === 'worldFair.html') {
             doodleContainerElement.removeChild(doodleIFrameElement);
@@ -101,10 +118,11 @@ var doodleContainerElement = document.getElementById("doodle-container");
         swapFrom = pageDelta;
         if( doodleNames[currentDoodleIndex] === 'worldFair.html') {
             doodleContainerElement.removeChild(doodleImageElement);
+
+            doodleIFrameElement.style["opacity"] = 0;
+            doodleIFrameElement.setAttribute("src", doodleNames[currentDoodleIndex] );
             doodleContainerElement.appendChild(doodleIFrameElement);
             swappingDoodle = doodleIFrameElement;
-            doodleIFrameElement.setAttribute("src", doodleNames[currentDoodleIndex] );
-
         } else {
             doodleImageElement.setAttribute("src", doodleURL + doodleNames[currentDoodleIndex]);
         }
