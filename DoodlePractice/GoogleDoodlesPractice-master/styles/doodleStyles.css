@@ -1,0 +1,75 @@
+main {
+ padding: 0px 10px;
+}
+
+header {
+    text-align: center;
+    height: 50px;
+    min-width: 910px;
+}
+
+div#content-container {
+ width: 910px;
+ margin: 0 auto;
+ text-align: center;
+}
+
+section#doodle-container {
+    position: relative;
+
+    margin: 0 auto;
+
+    height: 300px;
+    width: 760px;
+
+    overflow: hidden;
+}
+
+section#doodle-container .displayed-doodle {
+    /*prolly gonna adjust this on a per image basis*/
+    position: relative;
+    padding-top: 20px;
+}
+
+iframe.displayed-doodle {
+ height: 500px;
+ width: 700px;
+ scroll: none;
+ border: none;
+}
+
+section#doodle-container .prev-doodle, .next-doodle {
+    position: absolute;
+    z-index: 2;
+    top: 131px;
+
+    width: 38px;
+    height: 38px;
+    border-radius: 26.85px;
+
+    line-height: 38px;
+    font-size: 28px;
+    font-weight: bold;
+
+    opacity: .5;
+    background-color: lightgray;
+    color: white;
+
+    cursor: pointer;
+}
+
+section#doodle-container .prev-doodle:hover, .next-doodle:hover {
+    background-color: gray;
+}
+
+section#doodle-container .prev-doodle.disabled, .next-doodle.disabled {
+    background-color: darkgray;
+}
+
+section#doodle-container .prev-doodle {
+    left: 10px;
+}
+
+section#doodle-container .next-doodle {
+    right: 10px;
+}

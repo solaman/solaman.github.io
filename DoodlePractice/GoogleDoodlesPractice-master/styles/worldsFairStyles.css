@@ -1,0 +1,73 @@
+#looking-glass {
+ position: fixed;
+ top: 0;
+ left: 0;
+ opacity: 0;
+ z-index: 4;
+ transform: scale(.25);
+ transition: transform 400ms, opacity 400ms 0s;
+}
+
+#looking-glass.active {
+    transform: scale(1);
+    transition: transform 400ms, opacity 400ms 0s;
+    opacity: 1;
+}
+
+#base-doodle {
+    height: 251.5px;
+    width: 631.5px;
+}
+
+body {
+ margin: 0;
+}
+
+#doodle-container {
+    position:relative;
+    cursor: none;
+    height: 251.5px;
+    width: 631.5px;
+    overflow: hidden;
+    padding: 10px 5px 5px 10px;
+}
+
+#doodle-container > #big-doodle-container-mid{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 3;
+    background-color: white;
+
+    width: 190px;
+    height: 190px;
+    border-radius: 113.31px;
+    overflow: hidden;
+
+    opacity: 0;
+    transform: scale(.25);
+    transition: transform 400ms, opacity 400ms;
+}
+
+#doodle-container > #big-doodle-container-mid.active {
+    transform: scale(1);
+    opacity: 1;
+    transition: transform 400ms, opacity 400ms;
+}
+
+
+#doodle-container > #big-doodle-container-mid > img {
+    position: absolute;
+}
+
+.overlay {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    box-sizing: border-box;
+    z-index: 5;
+    opacity: 0;
+    height: 100%;
+    width: 100%;
+}
+
