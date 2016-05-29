@@ -8,10 +8,14 @@
 
    var bigDoodleContainerElement = document.getElementById("big-doodle-container-mid");
    var bigDoodleElement = bigDoodleContainerElement.getElementsByTagName("img")[0];
+
    var doodleRatioWidth = ( (bigDoodleElement.naturalWidth || bigDoodleElement.clientWidth)/document.getElementById("base-doodle").clientWidth);
    var doodleRatioHeight = ( (bigDoodleElement.naturalHeight || bigDoodleElement.clientHeight)/document.getElementById("base-doodle").clientHeight);
 
-
+    bigDoodleElement.addEventListener("load", function() {
+        doodleRatioWidth = ( (bigDoodleElement.naturalWidth || bigDoodleElement.clientWidth)/document.getElementById("base-doodle").clientWidth);
+        doodleRatioHeight = ( (bigDoodleElement.naturalHeight || bigDoodleElement.clientHeight)/document.getElementById("base-doodle").clientHeight);
+    });
    function moveLookingGlass(event) {
        var x = event.clientX;
        var y = event.clientY;
