@@ -91,6 +91,7 @@ body.unrevealed > main {
 
 #show-off-svg {
     position: fixed;
+    text-overflow: clip;
     z-index: -1;
     top: 80px;
 }
