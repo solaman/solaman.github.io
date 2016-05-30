@@ -3,7 +3,7 @@ body {
     font-family: 'forum';
     margin: 0;
     border: none;
-    width: 100%;
+    min-width: 700px;
 }
 
 h1 {
@@ -12,15 +12,49 @@ h1 {
 }
 
 header {
- background-color: #29293d;
+    position: relative;
+    height: 94.5px;
 }
 
-header h1.page-title{
-    color: white;
+header img.logo {
+    position: fixed;
+    z-index: 1;
+    left: -6px;
+    top: -7px;
+    height: 115px;
+}
 
-    height: 60px;
-    padding-left: 20px;
+header img.photo-rim {
+    position: fixed;
+    width: 202px;
+    right: -8px;
+    top: -5px;
+    z-index: 1;
+}
 
-    line-height: 80px;
-    font-size: 70px;
+header img.photo {
+    position: absolute;
+    z-index: 3;
+    height: 151px;
+    width: 151px;
+    top:  18px;
+    right: 18px;
+
+    box-shadow: 4px 4px 4px grey;
+}
+
+header div.header-remaining {
+    position: absolute;
+    left: 455.23px;
+    right: 180px;
+    height: 94.5px;
+    background-color: #29293d;
+    box-shadow: 0px 7px 4px -3px grey;
+    z-index: 2;
+}
+
+#show-off-svg {
+    position: fixed;
+    z-index: 0;
+    top: 80px;
 }
