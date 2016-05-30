@@ -120,11 +120,11 @@ the first place.
             doodleContainerElement.removeChild(doodleImageElement);
 
             doodleIFrameElement.style["opacity"] = 0;
-            doodleIFrameElement.setAttribute("src", doodleNames[currentDoodleIndex] );
+            doodleIFrameElement.src = doodleNames[currentDoodleIndex];
             doodleContainerElement.appendChild(doodleIFrameElement);
             swappingDoodle = doodleIFrameElement;
         } else {
-            doodleImageElement.setAttribute("src", doodleURL + doodleNames[currentDoodleIndex]);
+            doodleImageElement.src = doodleURL + doodleNames[currentDoodleIndex];
         }
     };
 
