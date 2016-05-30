@@ -23,6 +23,7 @@ body > header#website-banner {
     left: 0;
     height: 94.5px;
     width: 100%;
+    min-width: 700px;
     opacity: 1;
     transition: opacity 200ms 0s ease-in;
 }
@@ -91,6 +92,7 @@ body.unrevealed > main {
 
 #show-off-svg {
     position: fixed;
+    width: 800px;
     text-overflow: clip;
     z-index: -1;
     top: 80px;
