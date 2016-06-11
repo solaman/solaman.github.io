@@ -95,12 +95,9 @@ the IFrame from the start does not have a src attribute. So,
 I have to add the URL *before* inserting into the DOM, otherwise
 two load events will be caught.
 
-This doesn't happen for the img element, because it *already*
-has a src attribute assigned and we start with it. So the everything
-has already been loaded!
-You can guess that, if we made it so that we started with an IFrame
-and moved to an img, that we would get two load events for img unless
-we add the src first.
+This is weird though, because for the main page banner, we have load issues
+if we add a src property before adding the listener. So...why is the iFrame doing the opposite?
+is it because it is added to the DOM?
 
 The fact that this is a problem and the code does not lead itself to an elegant
 solution to resolve this issue makes me think that it should be reorganized in

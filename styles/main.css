@@ -1,9 +1,17 @@
+h1, ul {
+    margin: 0;
+    padding: 0;
+}
 
+ul {
+ list-style: none;
+}
+
+/*BEGIN: WEBSITE BANNER*/
 body {
     font-family: 'forum';
     margin-top: 94.5px;
     border: none;
-    min-width: 700px;
 
     transition: margin-top 200ms 400ms ease-in;
 }
@@ -12,18 +20,16 @@ body.unrevealed {
     margin-top: 106.5px;
 }
 
-h1 {
- margin: 0;
- padding: 0;
-}
-
 body > header#website-banner {
     position: fixed;
     top: 0;
     left: 0;
+
     height: 94.5px;
     width: 100%;
-    min-width: 700px;
+
+    background-color:  #29293d;
+
     opacity: 1;
     transition: opacity 200ms 0s ease-in;
 }
@@ -32,23 +38,19 @@ body.unrevealed > header#website-banner {
   opacity: 0;
 }
 
-header > img.logo {
-    position: absolute;
-    z-index: 1;
-    left: -6px;
-    top: -7px;
-    height: 115px;
+header > .logo {
+    display: inline-block;
+    cursor: default;
+
+    height: 94.5px;
+    padding-left: 6px;
+    padding-top: 6px;
+
+    color: white;
+    font-size: 94.5px;
 }
 
-header > img.photo-rim {
-    position: absolute;
-    width: 202px;
-    right: -8px;
-    top: -5px;
-    z-index: 1;
-}
-
-header > img.photo {
+header > .photo {
     position: absolute;
     z-index: 3;
     height: 151px;
@@ -56,46 +58,29 @@ header > img.photo {
     top:  18px;
     right: 18px;
 
-    box-shadow: 4px 4px 4px grey;
+    box-shadow: 2px 2px 4px 3px rgba(0,0,0, .25);
     opacity: 1;
 
     transition: opacity 200ms 200ms ease-in, top 200ms 200ms ease-in;
 }
 
-body.unrevealed header#website-banner > img.photo {
+body.unrevealed header#website-banner > .photo {
     opacity: 0;
     top: 30px;
 }
 
-header > div.header-remaining {
-    position: absolute;
-    left: 455.23px;
-    right: 180px;
-    height: 94.5px;
-    background-color: #29293d;
-    box-shadow: 0px 7px 4px -3px grey;
-    z-index: 2;
-}
-
 main {
- margin-right: 200px;
- padding-left: 10px;
+ margin-top: 181px;
+ padding: 0px 10px;
 
  opacity: 1;
 
- transition: opacity 200ms 400ms ease-in;
+ transition: opacity 200ms 400ms ease-in, margin-top 200ms 400ms ease-in;
 }
 
 body.unrevealed > main {
+    margin-top: 200px;
     opacity: 0;
-}
-
-#show-off-svg {
-    position: fixed;
-    width: 800px;
-    text-overflow: clip;
-    z-index: -1;
-    top: 80px;
 }
 
 body > footer {
@@ -108,4 +93,72 @@ body > footer {
 
 body.unrevealed > footer {
     opacity: 0;
+}
+
+/*END: WEBSITE BANNER*/
+
+#project-navigation {
+    /*background-color: #D8D7CC;  */
+    width: 100%;
+}
+
+#project-navigation > ul {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+}
+
+#project-navigation > ul > li {
+    position: relative;
+    z-index: 1;
+
+    cursor: pointer;
+
+    flex: 0 0 200px;
+
+    height: 200px;
+    margin: 20px;
+
+    transition: box-shadow 200ms 0s ease-in;
+    box-shadow: -4px 15px 15px 5px rgba(0,0,0, 0);
+}
+
+#project-navigation > ul > li:hover {
+    box-shadow: 0px 15px 15px 5px rgba(0,0,0, .05);
+    transition: box-shadow 200ms 0s ease-in;
+}
+
+@media (max-width: 720px), (max-device-width: 830px) {
+    #project-navigation > ul {
+        flex-wrap: wrap;
+    }
+
+    #project-navigation > ul > li {
+        flex-basis: 500px;
+        height: 500px;
+    }
+}
+
+#project-navigation > ul > li > a {
+    position: relative;
+    top: 10px;
+    z-index: 2;
+
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    background-color: #DED99B;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+
+    box-shadow: 2px 2px 3px rgba(0,0,0, .33);
+
+    transition: box-shadow 200ms 0s ease-in, top 200ms 0s ease-in;
+}
+
+#project-navigation > ul > li > a:hover {
+    top: 0px;
+    box-shadow: 2px 2px 3px rgba(0,0,0, .05);
+    transition: box-shadow 200ms 0s ease-in, top 200ms 0s ease-in;
 }
