@@ -24,6 +24,7 @@ body > header#website-banner {
     position: fixed;
     top: 0;
     left: 0;
+    z-index: 3;
 
     height: 94.5px;
     width: 100%;
